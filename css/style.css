@@ -90,7 +90,7 @@ a, a:hover {
 }
 
 .btn {
-  font-size: 11px;
+  font-size: 13px;
   border-radius: 30px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -108,15 +108,17 @@ a, a:hover {
 }
 
 .btn.btn-outline-pill.btn-custom-light {
-  color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #d63447;
+  border: 2px solid #d63447;
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
 }
 
 .btn.btn-outline-pill.btn-custom-light:hover, .btn.btn-outline-pill.btn-custom-light:active, .btn.btn-outline-pill.btn-custom-light:focus {
-  border-color: #fff;
+  color: #fff;
+  border: none;
+  background: #d63447;
 }
 
 .btn.btn-bg-white--hover:hover {
@@ -744,7 +746,7 @@ a, a:hover {
 }
 
 .cover-v1 .heading {
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 900;
   color: #fff;
 }

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/vendor/jquery.fancybox.min.css">
     
+    
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
@@ -41,11 +42,11 @@
 
       <div class="unslate_co--site-inner">
 
-        <div class="lines-wrap">
+        <!-- <div class="lines-wrap">
           <div class="lines-inner">
             <div class="lines"></div>
           </div>
-        </div>
+        </div> -->
         <!-- END lines -->
       
       <nav class="unslate_co--site-nav site-nav-target">
@@ -87,8 +88,9 @@
           <div class="row align-items-center">
               
             <div class="col-md-7 mx-auto text-center">
+              <p class="subheading font-weight-bolder gsap-reveal-hero">Hi, I'm</p>
               <h1 class="heading gsap-reveal-hero">Olusoga Gbenga</h1>
-              <h2 class="subheading gsap-reveal-hero">I’m a <span></span>Glenn Chapman Hoyer A Product Designer Based In San Francisco</h2>
+              <h2 class="subheading gsap-reveal-hero"><span class="typing"></span></h2>
             </div>
 
           </div>
@@ -105,6 +107,33 @@
       </div>
       <!-- END .cover-v1 -->
 
+      <div class="unslate_co--section" id="about-section">
+        <div class="container">
+          
+          <div class="section-heading-wrap text-center mb-5">
+            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">About Me</span></h2>
+            <span class="gsap-reveal">
+            <img src="images/divider.png" alt="divider" width="76">
+            </span>
+          </div>
+          
+
+          <div class="row mt-5 justify-content-between">
+            <div class="col-lg-7 mb-5 mb-lg-0">
+              <figure class="dotted-bg gsap-reveal-img ">
+                <img src="images/about_me_pic2.jpg" alt="Image" class="img-fluid">
+              </figure>
+            </div>
+            <div class="col-lg-4 pr-lg-5">
+              <h3 class="mb-4 heading-h3"><span class="gsap-reveal">We can make it together</span></h3>
+              <p class="mb-4 gsap-reveal">Cras ultricies ligula sed magna dictum porta. Vivamus suscipit tortor eget felis porttitor volutpat. Donec rutrum congue leo eget malesuada.</p>
+              <p class="lead gsap-reveal">Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+              <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Contact me</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <div class="unslate_co--section" id="portfolio-section">
         <div class="container">
@@ -118,7 +147,7 @@
             <div class="d-flex align-items-center mb-4 gsap-reveal gsap-reveal-filter">
               <h2 class="mr-auto heading-h2"><span class="gsap-reveal">Portfolio</span></h2>
 
-              <!-- <a href="#" class="text-white js-filter d-inline-block d-lg-none">Filter</a>
+              <a href="#" class="text-white js-filter d-inline-block d-lg-none">Filter</a>
               
               <div class="filter-wrap">
                 <div class="filter ml-auto" id="filters">
@@ -128,7 +157,7 @@
                   <a href="#" data-filter=".illustration">Illustration</a>
                   <a href="#" data-filter=".packaging">Packaging</a>
                 </div>
-              </div> -->
+              </div>
             </div>
 
 
@@ -281,32 +310,7 @@
       </div>
 
 
-      <div class="unslate_co--section" id="about-section">
-        <div class="container">
-          
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">About Me</span></h2>
-            <span class="gsap-reveal">
-            <img src="images/divider.png" alt="divider" width="76">
-            </span>
-          </div>
-          
-
-          <div class="row mt-5 justify-content-between">
-            <div class="col-lg-7 mb-5 mb-lg-0">
-              <figure class="dotted-bg gsap-reveal-img ">
-                <img src="images/about_me_pic2.jpg" alt="Image" class="img-fluid">
-              </figure>
-            </div>
-            <div class="col-lg-4 pr-lg-5">
-              <h3 class="mb-4 heading-h3"><span class="gsap-reveal">We can make it together</span></h3>
-              <p class="lead gsap-reveal">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there <a href="#">live the blind</a> texts. </p>
-              <p class="mb-4 gsap-reveal">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Download my CV</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       <div class="unslate_co--section" id="services-section">
         <div class="container">
@@ -583,7 +587,7 @@
 
 
           <div class="row justify-content-between">
-            
+            <!-- action="./php/send-email.php"  -->
             <div class="col-md-6">
               <form method="post" class="form-outline-style-v1" id="contactForm">
                 <div class="form-group row mb-0">
@@ -619,11 +623,11 @@
               <div class="contact-info-v1">
                 <div class="gsap-reveal d-block">
                   <span class="d-block contact-info-label">Email</span>
-                  <a href="#" class="contact-info-val">info@yourdomain.com</a>
+                  <a href="#" class="contact-info-val">shogz@gmail.com</a>
                 </div>
                 <div class="gsap-reveal d-block">
                   <span class="d-block contact-info-label">Phone</span>
-                  <a href="#" class="contact-info-val">+12 345 6789 012</a>
+                  <a href="#" class="contact-info-val">+234 809 5643 453</a>
                 </div>
                 <div class="gsap-reveal d-block">
                   <span class="d-block contact-info-label">Address</span>
@@ -642,25 +646,20 @@
           <div class="row justify-content-center">
             <div class="col-md-7">
               
-              <div class="footer-site-logo"><a href="#">Unfold<span>.</span></a></div>
+              <div class="footer-site-logo"><a href="#">Shogz<span>.</span></a></div>
 
               <ul class="footer-site-social">
                 <li><a href="#">Facebook</a></li>
                 <li><a href="#">Twitter</a></li>
                 <li><a href="#">Instagram</a></li>
-                <li><a href="#">Dribbble</a></li>
-                <li><a href="#">Behance</a></li>
               </ul>
 
               <p class="site-copyright">
-                
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 Copyright &copy;
                 <script>
                   document.write(new Date().getFullYear());
                 </script> All rights reserved | This template is made with <i class="icon-heart"
                   aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               
               </p>
 
@@ -679,8 +678,29 @@
       <div class="site-loader"></div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="js/scripts-dist.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+      let typed = document.querySelector('.typing'); 
+      if(typed) {
+        window.addEventListener('load', () => {
+          let arr = [
+              "Brand strategist", 
+              "PR Manager", 
+              "Actor",
+              "Red carpet host"
+            ];
+          let typed = new Typed(".typing", {
+              strings: arr,
+              typeSpeed: 100,
+              backSpeed: 60,
+              loop: true
+          });
+        });
+      }
+    </script>
 
   </body>
 </html>
