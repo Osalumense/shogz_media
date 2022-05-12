@@ -89,6 +89,10 @@ a, a:hover {
   }
 }
 
+.hero {
+  background: linear-gradient(rgba(2,2,2,.7),rgba(0,0,0,.7)),url('../images/shogz.png') fixed center center;
+}
+
 .btn {
   font-size: 13px;
   border-radius: 30px;
@@ -208,10 +212,10 @@ a, a:hover {
 }
 
 .unslate_co--site-nav .site-nav-ul > li > a, .unslate_co--site-nav .site-nav-ul-none-onepage > li > a {
-  padding: 10px 7px;
+  padding: 10px 9px;
   display: block;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   position: relative;
 }
 
@@ -221,7 +225,7 @@ a, a:hover {
   content: "";
   position: absolute;
   height: 1px;
-  background: #fff;
+  background: #D63447;
   bottom: 0;
   width: 0%;
   -webkit-transition: .2s width ease-in-out;
