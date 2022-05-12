@@ -70,13 +70,13 @@ a, a:hover {
   }
 }
 
-.back-to-top {
+#back-to-top {
   position: fixed;
-  visibility: hidden;
-  opacity: 0;
-  right: 15px;
-  bottom: 15px;
-  z-index: 9999;
+  display: none;
+  overflow: hidden;
+  right: 25px;
+  bottom: 25px;
+  z-index: 999;
   background: #d63447;
   width: 40px;
   height: 40px;
@@ -84,25 +84,20 @@ a, a:hover {
   transition: all 0.4s;
 }
 
-.back-to-top i {
+#back-to-top i {
   font-size: 24px;
   color: #fff;
   line-height: 0;
   transition: 0.3s;
 }
 
-.back-to-top:hover i {
+#back-to-top:hover i {
   transform: translateY(-5px)
 }
 
-.back-to-top:hover {
+#back-to-top:hover {
   background: #ae2b3b;
   color: #fff;
-}
-
-.back-to-top.active {
-  visibility: visible;
-  opacity: 1;
 }
 
 .unslate_co--footer {
