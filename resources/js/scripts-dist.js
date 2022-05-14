@@ -13,7 +13,7 @@
 // @prepros-append vendor/jquery.validate.min.js
 // @prepros-append vendor/jquery.fancybox.min.js
 // @prepros-append vendor/stickyfill.min.js
-// @prepros-append vendor/imagesloaded.pkgd.min.js
+// @prepros-append vendor/imagesloaded.npm pkgd.min.js
 // @prepros-append vendor/ScrollMagic.min.js
 // @prepros-append vendor/scrollmagic.animation.gsap.min.js
 /*! jQuery v3.3.1 | (c) JS Foundation and other contributors | jquery.org/license */
