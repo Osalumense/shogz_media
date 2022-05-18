@@ -22,6 +22,7 @@ jQuery(function($) {
 	contactForm();
 	stickyFillPlugin();
 	animateReveal();
+	showScrollToTopButton();
 
 });
 
@@ -90,7 +91,7 @@ var siteIstotope = function() {
 				var scene = new ScrollMagic.Scene({
 					triggerElement: this,
 					duration: "0%",
-					reverse: false,
+					reverse: true,
 					offset: "-300%",
 				})
 				.setTween(tl2)
@@ -625,7 +626,7 @@ var animateReveal = function() {
 			var scene = new ScrollMagic.Scene({
 				triggerElement: this,
 				duration: "0%",
-				reverse: false,
+				reverse: true,
 				offset: "-300%",
 			})
 			.setTween(tl)
@@ -674,5 +675,24 @@ var animateReveal = function() {
 		});
 	}
 
+}
+
+let showScrollToTopButton = function() {
+	$(window).scroll(function() {
+		let height = $(window).scrollTop();
+		if (height > 200) {
+		  $('#back-to-top').addClass('active').show('slow');
+		} else {
+		  $('#back-to-top').removeClass('active').hide();
+		}
+	});
+	$(document).ready(function() {
+		$("#back-to-top").click(function(event) {
+			event.preventDefault();
+			$("html, body").animate({ scrollTop: 0 }, "slow");
+			return false;
+		});
+
+	});
 }
 

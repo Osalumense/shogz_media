@@ -57,7 +57,7 @@
     <script src="{{asset('js/vendor/jquery.validate.min.js')}}"></script>
     <script src="{{asset('js/vendor/jquery.fancybox.min.js')}}"></script>
     <script src="{{asset('js/vendor/stickyfill.min.js')}}"></script>
-    <script src="{{asset('js/vendor/imagesloaded.npm pkgd.min.js')}}"></script>
+    <script src="{{asset('js/vendor/imagesloaded.pkgd.min.js')}}"></script>
     <script src="{{asset('js/vendor/ScrollMagic.min.js')}}"></script>
     <script src="{{asset('js/vendor/scrollmagic.animation.gsap.min.js')}}"></script>
     
@@ -84,23 +84,7 @@
       }
     </script>
     <script>
-      $(window).scroll(function() {
-          let height = $(window).scrollTop();
-          if (height > 200) {
-            console.log('scrolled')
-            $('#back-to-top').show('slow');
-          } else {
-            $('#back-to-top').hide();
-          }
-      });
-      $(document).ready(function() {
-          $("#back-to-top").click(function(event) {
-              event.preventDefault();
-              $("html, body").animate({ scrollTop: 0 }, "slow");
-              return false;
-          });
-
-      });
+      
     </script>
 
     </body>

@@ -23,4 +23,4 @@
       </div>
     </div>
   </footer>
-  <a href="#" id="back-to-top" class="back-to-top d-flex align-items-center justify-content-center smoothscroll"><i class='bx bx-chevrons-up'></i></a>
+  <a href="javascript:void(0);" id="back-to-top" class="back-to-top d-flex align-items-center justify-content-center smoothscroll"><i class='bx bx-chevrons-up'></i></a>
