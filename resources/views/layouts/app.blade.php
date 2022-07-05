@@ -12,11 +12,25 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
         @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script>
+            const setup = () => {
+                return {
+                loading: true,
+                isSidebarOpen: false,
+                toggleSidbarMenu() {
+                    this.isSidebarOpen = !this.isSidebarOpen
+                },
+                isSettingsPanelOpen: false,
+                isSearchBoxOpen: false,
+                }
+            };
+        </script>
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
