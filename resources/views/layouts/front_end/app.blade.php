@@ -33,6 +33,8 @@
     @include('layouts.front_end.section.footer')
     </div>
 
+    
+
         
     <!-- Loader -->
     <div id="unslate_co--overlayer"></div>

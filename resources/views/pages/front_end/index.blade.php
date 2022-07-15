@@ -2,6 +2,7 @@
 @section('title', 'Olusoga Olugbenga &mdash; Brand strategist and PR Manager')
 @section('description', 'I am a Brand strategist with vast experience in Brand strategy and PR management')
 @section('keywords', 'PR Manager | Olusoga Olugbenga | Shogz')
+
 @section('content')
 <div class="cover-v1 jarallax hero" id="home-section">
     <div class="container">
@@ -218,36 +219,62 @@
 
 
       <div class="row justify-content-between">
-        <!-- action="./php/send-email.php"  -->
+        
         <div class="col-md-6">
-          <form method="post" class="form-outline-style-v1" id="contactForm">
+          <div class="alert alert-success alert-dismissible fade show" role="alert" id="contact_alert">
+            <div id="response" class="text-center mx-auto"></div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="form-message-warning" class="my-4 mx-auto"></div>
+          <form method="post" class="form-outline-style-v1" id="contactForm" action="{{url('/contact-us/add')}}">
+            <input type="hidden" id="token" value="{{ @csrf_token() }}">
             <div class="form-group row mb-0">
-
               <div class="col-lg-6 form-group gsap-reveal">
                 <label for="name">Name</label>
                 <input name="name" type="text" class="form-control" id="name">
+                @error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
               </div>
               <div class="col-lg-6 form-group gsap-reveal">
                 <label for="email">Email</label>
                 <input name="email" type="email" class="form-control" id="email">
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+              </div>
+              <div class="col-lg-12 form-group gsap-reveal">
+                <label for="subject">Subject</label>
+                <input name="subject" type="text" class="form-control" id="subject">
+                @error('subject')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
               </div>
               <div class="col-lg-12 form-group gsap-reveal">
                 <label for="message">Write your message...</label>
                 <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
+                @error('message')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
               </div>
             </div>
             <div class="form-group row gsap-reveal">
                 <div class="col-md-12 d-flex align-items-center">
-                  <input type="submit" class="btn btn-outline-pill btn-custom-light mr-3" value="Send Message">
+                  <button type="submit" class="btn btn-outline-pill btn-custom-light mr-3" id="submit_contact">Send Message</button>
                   <span class="submitting"></span>
                 </div>
               </div>
           </form>
-          <div id="form-message-warning" class="mt-4"></div> 
-          <div id="form-message-success">
-            Your message was sent, thank you!
-          </div>
-
         </div>
 
         <div class="col-md-4">
@@ -268,7 +295,51 @@
         </div>
 
       </div>
+
+      
     </div>
   </div>
   </div>
 @endsection
+
+@push('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js" type="text/javascript"></script>
+    <script>
+      $(document).ready(function() {
+        $("#contactForm").submit(function(e) {
+          let $submit = $('.submitting'),
+					waitText = 'Submitting...';
+          e.preventDefault();
+          let form = $(this);
+          let url = $(this).attr('action');
+          form.parsley().validate();
+          if (form.parsley().isValid()) {
+              $('#submit_contact').attr('disabled', true);
+              $('#submit_contact').html('<span class="spinner-border spinner-border-sm"></span> Please wait...');
+              $.post(url, 
+                  {
+                      '_token' : $('#token').val(),
+                      name : $('#name').val(),
+                      email : $('#email').val(),
+                      subject : $('#subject').val(),
+                      message : $('#message').val()
+                  },
+                  function (response) {
+                      $('#submit_contact').attr('disabled', false);
+                      $('#submit_contact').html('Send Message');
+                      if(response.code == 400) {
+                        $('#form-message-warning').show();
+                        $("#form-message-warning").focus();
+                        $('#form-message-warning').html(response.msg);
+                      } 
+                      else if (response.code == 200) {
+                          $('#contactForm')[0].reset();
+                          $('#contact_alert').show();
+                          $('#response').html(response.msg);
+                      }
+              });
+          }
+        });
+      });
+    </script>
+@endpush

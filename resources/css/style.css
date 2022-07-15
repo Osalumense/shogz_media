@@ -1915,29 +1915,14 @@ span.error {
   resize: vertical;
 }
 
-#form-message-warning, #form-message-success {
+#form-message-warning, #contact_alert{
   display: none;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #form-message-warning {
   color: #f64b3c;
-}
-
-#form-message-success {
-  color: #8cba51;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.submitting {
-  float: left;
-  width: 100%;
-  padding: 10px 0;
-  display: none;
-  font-weight: bold;
-  font-size: 13px;
-  letter-spacing: .1rem;
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .unslate_co--sticky {

@@ -28,13 +28,13 @@
                     class="p-2 text-xl font-semibold leading-8 tracking-tight uppercase whitespace-nowrap text-blue-600"> Shogz
                     <span :class="{'lg:hidden': !isSidebarOpen}"> Dashboard</span>
                 </span>
-                <button @click="toggleSidbarMenu()" class="p-2 rounded-md lg:hidden">
+                <button @click="toggleSidbarMenu()" class="p-2 rounded-md lg:hidden text-blue-600">
                     <i class="bx bx-menu bx-sm"></i>
                 </button>
             </div>
             <!-- Sidebar links -->
             <nav class="flex-1 my-8 overflow-hidden hover:overflow-y-auto">
-                <ul class="p-2 overflow-hidden text-blue-600">
+                <ul class="p-2 text-blue-600">
                     <li>
                         <a href="{{ url('/admin') }}"
                             class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
@@ -42,129 +42,66 @@
                                 
                             <div>
                                 <span><i class="bx bx-home bx-sm"></i></span>
-                                <div class="opacity-0 w-18 bg-black text-white tooltip text-xs rounded-lg py-2 absolute group-hover:opacity-100 px-1 pointer-events-none">
-                                    {{ trans('admin::messages.index.menu.dashboard') }}
+                                <div class="opacity-0 z-[99] w-16 mx-auto bg-black text-white text-center tooltip text-xs rounded-full py-2 absolute group-hover:opacity-100 px-1 -left-2 pointer-events-none">
+                                    {{ 'Home' }}
                                 </div>                                
                             </div>
                             
                             <span
-                                :class="{ 'lg:hidden': !isSidebarOpen }">{{ trans('admin::messages.index.menu.dashboard') }}</span>
+                                :class="{ 'lg:hidden': !isSidebarOpen }">{{ 'Home' }}</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/admin/category') }}"
+                        <a href="{{ url('/admin/contact') }}"
                             class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
                             :class="{'justify-center relative group': !isSidebarOpen}">
                             <div>
-                                <span><i class="bx bx-purchase-tag bx-sm"></i>
-                                    <div class="opacity-0 w-16 mx-auto bg-black text-white text-center tooltip text-xs rounded-lg py-2 absolute group-hover:opacity-100 px-1 pointer-events-none">
-                                        {{ trans('admin::messages.index.menu.category') }}
+                                <span><i class='bx bx-envelope bx-sm' ></i>
+                                    <div class="opacity-0 w-16 mx-auto z-[99] bg-black text-white text-center tooltip text-xs rounded-full py-2 absolute group-hover:opacity-100 px-1 -left-2 pointer-events-none">
+                                        {{ ('Mails') }}
                                     </div>
                                 </span>
                                 
                             </div>
                             <span
-                                :class="{ 'lg:hidden': !isSidebarOpen }">{{ trans('admin::messages.index.menu.category') }}</span>
+                                :class="{ 'lg:hidden': !isSidebarOpen }">{{ ('Mails') }}</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/admin/units') }}"
+                        <a href="{{ url('/admin/edit-website') }}"
                             class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
                             :class="{'justify-center relative group': !isSidebarOpen}">
                             <div>
-                                <span><i class="bx bx-tag-alt bx-sm"></i>
+                                <span><i class='bx bxs-edit-alt bx-sm' ></i>
                                 </span>
-                                <div class="opacity-0 w-16 mx-auto bg-black text-white text-center tooltip text-xs rounded-lg py-2 absolute z-[99] group-hover:opacity-100 px-1 pointer-events-none">
-                                    {{ trans('admin::messages.index.menu.unit') }}
+                                <div class="opacity-0 w-16 mx-auto bg-black text-white text-center tooltip text-xs rounded-full py-2 absolute z-[99] group-hover:opacity-100 px-1 -left-2 pointer-events-none">
+                                    {{ ('Edit website') }}
                                 </div>
                             </div>
                             <span :class="{ 'lg:hidden': !isSidebarOpen }">
-                                {{ trans('admin::messages.index.menu.unit') }}
+                                {{ ('Edit website') }}
                             </span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/admin/products') }}"
+                        <a href="{{ url('/user/profile') }}"
                             class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
                             :class="{'justify-center relative group': !isSidebarOpen}">
                             <div>
                                 <span>
-                                <i class="bx bx-cart bx-sm"></i>
+                                    <i class='bx bxs-user-detail bx-sm'></i>
                                 </span>
-                                <div class="opacity-0 w-16 mx-auto bg-black text-white text-center tooltip text-xs rounded-lg py-2 absolute  group-hover:opacity-100 px-1 pointer-events-none">
-                                    {{ trans('admin::messages.index.menu.products') }}
+                                <div class="opacity-0 w-16 mx-auto z-[99] bg-black text-white text-center tooltip text-xs rounded-full py-2 absolute  group-hover:opacity-100 px-1 -left-2 pointer-events-none">
+                                    {{ ('profile') }}
                                 </div>
                             </div>
                             <span
-                                :class="{ 'lg:hidden': !isSidebarOpen }">{{ trans('admin::messages.index.menu.products') }}</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{ url('/admin/orders') }}"
-                            class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
-                            :class="{'justify-center relative group': !isSidebarOpen}">
-                            <div>
-                                <span>
-                                <i class="bx bx-line-chart bx-sm"></i>
-                                </span>
-                                <div class="opacity-0 w-16 mx-auto bg-black text-white text-center tooltip text-xs rounded-lg py-2 absolute  group-hover:opacity-100 px-1 pointer-events-none">
-                                    {{ trans('admin::messages.index.menu.orders') }}
-                                </div>
-                            </div>
-                            <span
-                                :class="{ 'lg:hidden': !isSidebarOpen }">{{ trans('admin::messages.index.menu.orders') }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/admin/promotion-code') }}"
-                            class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
-                            :class="{'justify-center relative group': !isSidebarOpen}">
-                            <div>
-                                <span>
-                                <i class="bx bx-gift bx-sm"></i>
-                                </span>
-                                <div class="opacity-0 w-16 mx-auto bg-black text-white text-center tooltip text-xs rounded-lg py-2 absolute  group-hover:opacity-100 px-1 pointer-events-none">
-                                    {{ trans('admin::messages.index.menu.promotion') }}
-                                </div>
-                            </div>
-                            <span
-                                :class="{ 'lg:hidden': !isSidebarOpen }">{{ trans('admin::messages.index.menu.promotion') }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/admin/invoice-orders') }}"
-                            class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
-                            :class="{'justify-center relative group': !isSidebarOpen}">
-                            <div>
-                                <span>
-                                <i class='bx bx-receipt bx-sm'></i>
-                                </span>
-                                <div class="opacity-0 w-16 mx-auto bg-black text-white text-center tooltip text-xs rounded-lg py-2 absolute  group-hover:opacity-100 px-1 bottom-full pointer-events-none">
-                                    {{ trans('admin::messages.index.menu.invoices') }}
-                                </div>
-                            </div>
-                            <span
-                                :class="{ 'lg:hidden': !isSidebarOpen }">{{ trans('admin::messages.index.menu.invoices') }}</span>
+                                :class="{ 'lg:hidden': !isSidebarOpen }">{{ ('profile') }}</span>
                         </a>
                     </li>
                     <!-- Sidebar Links... -->
                 </ul>
             </nav>
-            <!-- Sidebar footer -->
-            <div class="flex-shrink-0 p-2 border-t max-h-14">
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit"
-                        class="flex items-center justify-center w-full px-4 py-2 space-x-1 font-medium tracking-wider uppercase bg-gray-100 border rounded-md focus:outline-none focus:ring">
-                        <span>
-                            <i class="bx bx-sm bx-log-out" id="log-out"></i>
-                        </span>
-                        <span :class="{'lg:hidden': !isSidebarOpen}"> Logout </span>
-                    </button>
-                </form>
-
-            </div>
         </aside>
 
         <div class="flex flex-col flex-1 h-full overflow-hidden">
@@ -175,34 +112,10 @@
                     <div class="flex items-center space-x-3">
                         <span class="p-2 text-xl font-semibold  tracking-tight uppercase lg:hidden">Shogz</span>
                         <!-- Toggle sidebar button -->
-                        <button @click="toggleSidbarMenu()" class="p-2 rounded-md focus:outline-none focus:ring">
+                        <button @click="toggleSidbarMenu()" class="p-2 rounded-md focus:outline-none focus:ring text-blue-600">
                             <i class="bx bx-menu bx-sm"></i>
                         </button>
                     </div>
-
-                    <!-- Navbar right -->
-                    {{-- <div class="relative flex items-center space-x-3">
-
-
-                        <div class="items-center hidden space-x-3 md:flex">
-
-                            <div class="relative" x-data="{ isOpen: false }">
-                                <button @click="isOpen = !isOpen"
-                                    class="p-1 bg-gray-200 rounded-full focus:outline-none focus:ring">
-                                    <img class="object-cover w-8 h-8 rounded-full"
-                                        src="{{ asset('img/avatar.jpg') }}" alt="User Profile" />
-                                </button>
-                                <!-- Dropdown card -->
-                                <div @click.away="isOpen = false" x-show.transition.opacity="isOpen"
-                                    class="absolute transform -translate-x-full bg-white rounded-md shadow-lg min-w-max">
-                                    <div class="flex flex-col p-2 space-y-1 font-medium border-b">
-                                        <span class="text-gray-800">{{ Auth::user()->first_name }}</span>
-                                        <span class="text-sm text-gray-400">{{ Auth::user()->email }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
             </header>
 
             <!-- Main content -->
@@ -265,16 +178,5 @@
                 <!-- Start Content -->
                 @yield('content')
             </main>
-            <!-- Main footer -->
-            {{-- <footer class="flex items-center justify-between flex-shrink-0 p-4 border-t max-h-14">
-                <script>
-                    document.write(new Date().getFullYear());
-                </script>
-        </div>
-        <div class="text-sm">
-            Made by
-            <a class="text-blue-400 no-underline" href="https://luday.se" target="_blank">Luday</a>
-        </div>
-        </footer> --}}
     </div>
 </div>

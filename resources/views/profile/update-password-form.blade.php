@@ -32,7 +32,7 @@
             {{ __('Saved.') }}
         </x-jet-action-message>
 
-        <x-jet-button>
+        <x-jet-button class="bg-blue-600 hover:bg-blue-700 active:bg-blue-900">
             {{ __('Save') }}
         </x-jet-button>
     </x-slot>
